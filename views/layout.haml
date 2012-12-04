@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    - if defined?(@title)
+      %title= "Sloganizm - " + @title
+    - else
+      %title Sloganizm - Mantrafy Your Life!
+    %link(rel="stylesheet" href="css/reset.css")
+    %link(rel="stylesheet" href="assets/novecentowide_bold/stylesheet.css")
+    %link(rel="stylesheet" href="css/styles.css")
+    %script(type="text/javascript" src="js/jquery-1.8.3.min.js")
+  %body
+    =yield
