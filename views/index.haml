@@ -1,9 +1,11 @@
-.slogan#logo
-  %h1 Slo gan izm
+.content
+  .slogan#logo
+    %a{:href => "/about"}
+      %h1 Slo gan izm
 
-%p Enter a slogan to get started!
+  %p Enter your slogan below!
 
-%form{:action => "/", :method => "post", :autocomplete => "off"}
-  %input{:type => "text", :name => "slogan", :class => "text"}
-  %br
-  -#%input{:type => "submit", :value => "Sloganize!", :class => "button"} // commented out button for now
+  %form{:action => "/", :method => "post", :autocomplete => "off"}
+    %input{:type => "text", :name => "slogan", :class => "text"}
+    %br
+    -#%input{:type => "submit", :value => "Sloganize!", :class => "button"} // commented out button for now
