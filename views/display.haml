@@ -1,4 +1,5 @@
-.slogan 
-  %h1
-    = locals[:slogan]
-
+.wrapper
+  %h1.slogan
+    - locals[:slogan].each do |row|
+      %span.row
+        = row
