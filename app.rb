@@ -10,7 +10,7 @@ class App < Sinatra::Application
 
   post '/' do
     @slogan = (params[:slogan].to_s.empty? ? "wake up! life is short" : params[:slogan])
-    @slogan = Sanitize.clean(@slogan)
+    @slogan = Sanitize.clean(@slogan).upcase
     @title = @slogan
     haml :display, :locals => {:slogan => @slogan}
   end
