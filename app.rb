@@ -7,7 +7,13 @@ require 'sanitize'
 class App < Sinatra::Application
 
   def formatSlogan(string)
-    @sloganArr = string.split(' ')
+    @sloganArr = Array.new
+    if(string.length > 2)
+      @sloganArr = string.scan(/\w[^.!?]+\S+/)
+      @sloganArr = @sloganArr[0].split(' ') << @sloganArr[1]
+    else @sloganArr[0] = string
+    end
+    return @sloganArr
   end
 
   get '/' do

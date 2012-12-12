@@ -11,6 +11,15 @@
     %link(rel="stylesheet" href="css/styles.css")
     %script(type="text/javascript" src="js/jquery-1.8.3.min.js")
   %body
+    .float
     .content
       =yield
+      .icon
+        %img(src="http://placehold.it/40x40")
     %script(type="text/javascript" src="js/magnifier.js")
+    :javascript 
+      $(document).ready(function(){
+        contentHeight = $(".content").outerHeight();
+        console.log(contentHeight);
+        $(".float").css({"margin-bottom":-contentHeight/2 + "px"});
+      });
